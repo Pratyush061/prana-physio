@@ -32,9 +32,14 @@ export default function Hero() {
       </div>
 
       <div className="container-site relative z-10 py-24">
+        <motion.div {...a(0)}>
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-white backdrop-blur-sm">
+            Vijay Nagar · Indore
+          </span>
+        </motion.div>
         <motion.h1
-          {...a(0)}
-          className="heading-xl text-[44px] text-white sm:text-6xl lg:text-[72px]"
+          {...a(0.08)}
+          className="heading-xl mt-5 text-[44px] text-white sm:text-6xl lg:text-[72px]"
         >
           Find Your Balance
         </motion.h1>
