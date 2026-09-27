@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --teal: #54c0a4;
+  --teal-dark: #3fa98d;
+  --blue-link: #2b7bb9;
+  --ink: #111111;
+  --mist: #f4f5f5;
+  --line: #e5e7e7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #333333;
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-site px-6;
+  }
+  .heading-xl {
+    @apply font-display uppercase leading-[0.95] tracking-[0.02em] text-ink;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded bg-teal px-7 py-3.5 font-display text-lg uppercase tracking-[0.06em] text-white transition-all duration-200 hover:bg-teal-dark hover:-translate-y-px focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-teal-dark;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded border border-line bg-white px-7 py-3.5 font-display text-lg uppercase tracking-[0.06em] text-ink transition-all duration-200 hover:border-teal hover:text-teal-deep focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-teal;
+  }
+  .link-teal {
+    @apply font-medium text-teal-deep underline-offset-4 transition-colors hover:text-teal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
