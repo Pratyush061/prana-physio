@@ -4,7 +4,7 @@ import { clinic } from "@/lib/content";
 
 export default function Footer() {
   return (
-    <section id="faq" className="bg-teal py-16 text-white">
+    <section className="bg-teal py-16 text-white">
       <div className="container-site">
         <Reveal>
           <div className="flex justify-center gap-4">

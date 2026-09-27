@@ -20,6 +20,11 @@ body {
   color: #333333;
 }
 
+::selection {
+  background: var(--teal);
+  color: #fff;
+}
+
 @layer components {
   .container-site {
     @apply mx-auto w-full max-w-site px-6;
@@ -27,15 +32,50 @@ body {
   .heading-xl {
     @apply font-display uppercase leading-[0.95] tracking-[0.02em] text-ink;
   }
+  .eyebrow {
+    @apply mb-3 inline-block text-xs font-bold uppercase tracking-[0.22em] text-teal-deep;
+  }
+  .section-title {
+    @apply heading-xl relative inline-block;
+  }
+  .section-title::after {
+    content: "";
+    @apply absolute -bottom-2.5 left-0 h-[3px] w-10 rounded-full bg-teal;
+  }
   .btn-primary {
-    @apply inline-flex items-center gap-2 rounded bg-teal px-7 py-3.5 font-display text-lg uppercase tracking-[0.06em] text-white transition-all duration-200 hover:bg-teal-dark hover:-translate-y-px focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-teal-dark;
+    @apply inline-flex items-center gap-2 rounded-md bg-teal px-7 py-3.5 font-display text-lg uppercase tracking-[0.06em] text-white shadow-[0_2px_8px_rgba(84,192,164,0.35)] transition-all duration-200 hover:bg-teal-dark hover:-translate-y-px hover:shadow-[0_4px_14px_rgba(63,169,141,0.4)] active:translate-y-0 focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-dark;
   }
   .btn-ghost {
-    @apply inline-flex items-center gap-2 rounded border border-line bg-white px-7 py-3.5 font-display text-lg uppercase tracking-[0.06em] text-ink transition-all duration-200 hover:border-teal hover:text-teal-deep focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-teal;
+    @apply inline-flex items-center gap-2 rounded-md border border-line bg-white px-7 py-3.5 font-display text-lg uppercase tracking-[0.06em] text-ink transition-all duration-200 hover:border-teal hover:text-teal-deep focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-teal;
   }
   .link-teal {
     @apply font-medium text-teal-deep underline-offset-4 transition-colors hover:text-teal;
   }
+  .card-lift {
+    @apply transition-all duration-200 hover:-translate-y-1 hover:shadow-cardHover;
+  }
+}
+
+/* Animated underline for nav + inline links */
+.link-slide {
+  position: relative;
+}
+.link-slide::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  background: var(--teal);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-slide:hover::after,
+.link-slide[data-active="true"]::after {
+  transform: scaleX(1);
 }
 
 @media (prefers-reduced-motion: reduce) {
