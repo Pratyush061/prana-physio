@@ -1,0 +1,27 @@
+
+> prana-physio@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.26
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.0.2:3000
+
+ ✓ Starting...
+ ✓ Ready in 2.1s
+ ○ Compiling / ...
+ ✓ Compiled / in 9.6s (1460 modules)
+ HEAD / 200 in 10983ms
+ GET / 200 in 946ms
+ ○ Compiling /services ...
+ ✓ Compiled /services/[slug] in 2.5s (1446 modules)
+ GET /services 200 in 3025ms
+ GET /services 200 in 177ms
+ GET /services/running-assessment 200 in 4180ms
+ GET / 200 in 630ms
+ GET /services/running-assessment 200 in 478ms
+ ○ Compiling /bookings ...
+ ✓ Compiled /bookings in 1029ms (1450 modules)
+ GET /bookings 200 in 1728ms
+ ○ Compiling /contact ...
+ ✓ Compiled /contact in 519ms (1455 modules)
+ GET /contact?session=Initial+Session 200 in 683ms

@@ -4,12 +4,12 @@ export default function AnnouncementBar() {
       <div className="container-site flex flex-col items-center justify-between gap-1 py-2 text-center text-[13px] leading-relaxed sm:flex-row sm:text-left">
         <p>
           Cashless insurance now accepted —{" "}
-          <a href="#contact" className="text-teal hover:underline">
+          <a href="/insured-patients" className="text-teal hover:underline">
             register as an insured patient here &gt;&gt;
           </a>
         </p>
         <p className="hidden md:block">
-          New patients: book a 30-minute initial assessment for ₹499 &gt;&gt;
+          <a href="/new-patients-offer" className="hover:underline">New patients: book a 30-minute initial assessment for ₹499 &gt;&gt;</a>
         </p>
       </div>
     </div>

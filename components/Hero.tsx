@@ -51,7 +51,7 @@ export default function Hero() {
           Physiotherapist Vijay Nagar · Palasia · Bhawarkua · Indore
         </motion.p>
         <motion.div {...a(0.32)} className="mt-8">
-          <a href="#contact" className="btn-primary">
+          <a href="/bookings" className="btn-primary">
             Book Now <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </a>
         </motion.div>

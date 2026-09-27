@@ -13,7 +13,7 @@ export default function CtaBand() {
             Not sure which session to start with? Book the 30-minute initial
             assessment and we'll map it out together.
           </p>
-          <a href="#contact" className="btn-primary mt-8">
+          <a href="/bookings" className="btn-primary mt-8">
             Book Now <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </a>
         </Reveal>

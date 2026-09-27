@@ -31,7 +31,7 @@ export default function InfoCards() {
         </div>
 
         <Reveal delay={0.2} className="mt-10 text-center">
-          <a href="#contact" className="btn-primary">
+          <a href="/bookings" className="btn-primary">
             Book Now <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </a>
         </Reveal>

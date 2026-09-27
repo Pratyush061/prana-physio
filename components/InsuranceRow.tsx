@@ -23,7 +23,7 @@ export default function InsuranceRow() {
           ))}
         </div>
         <Reveal delay={0.15} className="mt-8 text-center">
-          <a href="#contact" className="link-teal text-sm font-semibold uppercase tracking-[0.08em]">
+          <a href="/bookings" className="link-teal text-sm font-semibold uppercase tracking-[0.08em]">
             Discover our physiotherapy services for insurance-covered patients &gt;
           </a>
         </Reveal>

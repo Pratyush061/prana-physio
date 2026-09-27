@@ -1,21 +1,50 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, useEffect, type FormEvent } from "react";
+import { useSearchParams } from "next/navigation";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { clinic } from "@/lib/content";
 
 const interests = [
   "Initial assessment",
+  "Initial Session",
+  "Follow-up",
   "Physiotherapy",
+  "1-on-1 Reformer Pilates",
   "Reformer Pilates",
   "Acupuncture",
+  "Deep Tissue Massage",
   "Sports rehab",
+  "Running Assessment",
+  "Cycling Assessment",
+  "Gift Card ₹1,000",
+  "Gift Card ₹2,000",
+  "Gift Card ₹3,000",
   "Insurance registration",
 ];
 
+import { Suspense } from "react";
+
 export default function Contact() {
+  return (
+    <Suspense fallback={<div>Loading form...</div>}>
+      <ContactForm />
+    </Suspense>
+  );
+}
+
+function ContactForm() {
+  const searchParams = useSearchParams();
+  const sessionParam = searchParams.get("session");
   const [sent, setSent] = useState(false);
+  const [selectedInterest, setSelectedInterest] = useState("");
+
+  useEffect(() => {
+    if (sessionParam && interests.includes(sessionParam)) {
+      setSelectedInterest(sessionParam);
+    }
+  }, [sessionParam]);
 
   // Front-end only: compose an email to the clinic.
   // A backend API route can be wired here later (e.g. app/api/contact/route.ts).
@@ -54,7 +83,7 @@ export default function Contact() {
             </p>
             <p>
               Insurance patients:{" "}
-              <a href="#contact" className="link-teal">
+              <a href="/insured-patients" className="link-teal">
                 register as an insured patient here &gt;
               </a>
             </p>
@@ -63,6 +92,7 @@ export default function Contact() {
 
         <div className="mt-12 grid gap-10 lg:grid-cols-2">
           <Reveal>
+            <Suspense fallback={<div>Loading form...</div>}>
             {sent ? (
               <div
                 role="status"
@@ -88,7 +118,8 @@ export default function Contact() {
                     id="interest"
                     name="interest"
                     required
-                    defaultValue=""
+                    value={selectedInterest}
+                    onChange={(e) => setSelectedInterest(e.target.value)}
                     className="w-full rounded border border-[#AFAFAF] bg-white px-4 py-3 text-[15px] text-ink focus:border-teal focus:outline-none"
                   >
                     <option value="" disabled>
@@ -188,6 +219,7 @@ export default function Contact() {
                 </button>
               </form>
             )}
+            </Suspense>
           </Reveal>
 
           <Reveal delay={0.15}>

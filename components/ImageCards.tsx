@@ -5,12 +5,14 @@ const cards = [
   {
     label: "Rebuild Your Strength",
     button: "Rebuild Your Body",
+    href: "/transform-your-body",
     image: "/images/card-strength.jpg",
     alt: "Woman exercising on a Pilates reformer in a bright studio",
   },
   {
     label: "Move Without Limits",
     button: "Access Your Full Capacity",
+    href: "/access-your-full-capacity",
     image: "/images/card-running.jpg",
     alt: "Runner training on a road at sunrise",
   },
@@ -37,7 +39,7 @@ export default function ImageCards() {
                   {card.label}
                 </p>
                 <a
-                  href="#contact"
+                  href={card.href}
                   className="mt-3 inline-block rounded bg-white px-5 py-2.5 text-sm font-medium text-teal-deep transition-colors hover:bg-ink hover:text-white"
                 >
                   {card.button}
