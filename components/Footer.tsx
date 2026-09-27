@@ -24,7 +24,7 @@ export default function Footer() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="mt-12 grid gap-10 text-center md:grid-cols-3 md:text-left">
+          <div className="mt-12 grid gap-10 text-center md:grid-cols-4 md:text-left">
             <div className="flex flex-col items-center gap-3 md:items-start">
               <span className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
                 <Phone className="h-4 w-4" aria-hidden="true" /> Phone
@@ -46,6 +46,24 @@ export default function Footer() {
               <a href={`mailto:${clinic.email}`} className="text-lg hover:underline">
                 {clinic.email}
               </a>
+            </div>
+            <div className="flex flex-col items-center gap-3 md:items-start">
+              <span className="text-xs font-semibold uppercase tracking-[0.18em]">
+                Quick Links
+              </span>
+              <ul className="flex flex-col gap-2 text-sm text-white/90">
+                <li><a href="/about" className="hover:text-white hover:underline">About</a></li>
+                <li><a href="/services" className="hover:text-white hover:underline">Services</a></li>
+                <li><a href="/bookings" className="hover:text-white hover:underline">Bookings</a></li>
+                <li><a href="/blog" className="hover:text-white hover:underline">Blog</a></li>
+                <li><a href="/faq" className="hover:text-white hover:underline">FAQ</a></li>
+                <li><a href="/contact" className="hover:text-white hover:underline">Contact</a></li>
+                <li><a href="/insured-patients" className="hover:text-white hover:underline">Insured Patients</a></li>
+                <li><a href="/privacy" className="hover:text-white hover:underline">Privacy Policy</a></li>
+                <li><a href="/terms" className="hover:text-white hover:underline">Terms of Service</a></li>
+                <li><a href="/cancellation-policy" className="hover:text-white hover:underline">Cancellation Policy</a></li>
+                <li><a href="/join-our-team" className="hover:text-white hover:underline">Join Our Team</a></li>
+              </ul>
             </div>
           </div>
         </Reveal>

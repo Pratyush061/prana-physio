@@ -11,13 +11,14 @@ export const clinic = {
 };
 
 export const nav = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Bookings", href: "#contact" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Bookings", href: "/bookings" },
+  { label: "Reviews", href: "/reviews" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const testimonials = [
@@ -40,6 +41,7 @@ export const testimonials = [
 
 export const services = [
   {
+    slug: "physiotherapy",
     title: "Physiotherapy",
     blurb:
       "Assessment-led treatment for back pain, neck pain, joint injuries and post-surgical recovery.",
@@ -47,6 +49,7 @@ export const services = [
     alt: "Physiotherapist treating a patient on a treatment table",
   },
   {
+    slug: "pilates",
     title: "Reformer & Mat Pilates",
     blurb:
       "Equipment-based Pilates for core strength, flexibility and long-term injury prevention.",
@@ -54,30 +57,47 @@ export const services = [
     alt: "Client performing a lunge exercise with a ball during a Pilates class",
   },
   {
+    slug: "acupuncture",
     title: "Acupuncture & Dry Needling",
     blurb: "Fine-needle techniques to release trigger points and calm stubborn pain.",
     image: "/images/service-acupuncture.jpg",
     alt: "Acupuncturist placing fine needles on a patient's shoulder",
   },
   {
-    title: "Sports Injury Rehab",
-    blurb:
-      "Return-to-sport programmes for runners, cricketers, gym-goers and weekend athletes.",
-    image: "/images/service-sports.jpg",
-    alt: "Athlete training with guidance in a rehabilitation studio",
-  },
-  {
+    slug: "massage",
     title: "Deep Tissue & Sports Massage",
     blurb: "Focused massage to release tight tissue and speed up recovery.",
     image: "/images/service-massage.jpg",
     alt: "Therapist treating tight back muscles during a sports massage",
   },
   {
+    slug: "running-assessment",
+    title: "Running Assessment (NEW)",
+    blurb: "Video gait analysis and strength profiling for runners. Fix injuries and improve performance.",
+    image: "/images/service-sports.jpg",
+    alt: "Runner on a trail being assessed",
+  },
+  {
+    slug: "cycling-assessment",
+    title: "Cycling Assessment (NEW)",
+    blurb: "On-bike posture analysis, power output review, and injury prevention for cyclists.",
+    image: "/images/service-cycling.jpg",
+    alt: "Cyclist training on a road bike",
+  },
+  {
+    slug: "posture-programs",
     title: "Posture & Desk-Strain Programs",
     blurb: "Evidence-based plans for neck, shoulder and back pain caused by long desk hours.",
     image: "/images/service-posture.jpg",
     alt: "Therapist's hands assessing a patient's lower back",
   },
+  {
+    slug: "insured-patients",
+    title: "New Insured Patient Registration",
+    blurb: "Register to use your health insurance. We accept Star Health, HDFC Ergo, ICICI Lombard and more.",
+    image: "/images/service-physiotherapy.jpg",
+    alt: "Physiotherapy consultation",
+  }
 ];
 
 export const aboutStory = [
@@ -94,6 +114,10 @@ export const aboutStory = [
     body: "After eight years across Melbourne and Bengaluru — treating club-level cricketers, marathoners and dancers, and leading physio teams at two large outpatient clinics — I returned home to Indore in 2018 to be closer to family.",
   },
   {
+    heading: "Consulting across India",
+    body: "Before settling back in Indore, I spent 5 years consulting and training physiotherapy teams at two large national clinic chains. This gave me unparalleled experience in seeing a wide variety of clinical presentations and refining the operational standards of premium care.",
+  },
+  {
     heading: "Working with Indore's athletes",
     body: "Back home, I spent three seasons as physiotherapist for a Vijay Nagar cricket academy, managing pre-match preparation, pitch-side cover and season-long rehab. Several of those boys now play at state level.",
   },
@@ -104,6 +128,10 @@ export const aboutStory = [
   {
     heading: "The opening of Prana Physio",
     body: "In 2021 I opened this studio in the heart of Vijay Nagar — a fully equipped physiotherapy, Pilates and acupuncture space minutes from Palasia and Bhawarkua. I've now treated over 2,000 patients across Indore.",
+  },
+  {
+    heading: "Prana Physio today",
+    body: "Today, we are a thriving clinic seeing patients from all walks of life—from desk workers to state athletes. Over 2,000 patients have trusted us with their recovery journey, and our goal remains the same: empowering you with the strength to move pain-free.",
   },
   {
     heading: "My method",

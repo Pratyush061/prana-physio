@@ -1,10 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { nav } from "@/lib/content";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -32,27 +35,32 @@ export default function Navbar() {
       }`}
     >
       <div className="container-site flex items-center justify-between py-4">
-        <a href="#home" className="flex items-center gap-3" aria-label="Prana Physio — home">
+        <Link href="/" className="flex items-center gap-3" aria-label="Prana Physio — home">
           <span className="flex h-11 w-11 items-center justify-center rounded-full bg-teal font-display text-2xl text-white">
             P
           </span>
           <span className="font-display text-2xl uppercase tracking-[0.06em] text-ink">
             Prana Physio
           </span>
-        </a>
+        </Link>
 
         <nav aria-label="Main navigation" className="hidden lg:block">
-          <ul className="flex items-center gap-7">
-            {nav.map((item) => (
-              <li key={item.label}>
-                <a
-                  href={item.href}
-                  className="text-sm font-medium uppercase tracking-wide text-ink transition-colors hover:text-teal-deep"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
+          <ul className="flex flex-wrap items-center gap-4 xl:gap-7 justify-end max-w-[800px]">
+            {nav.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    className={`text-sm font-medium uppercase tracking-wide transition-colors hover:text-teal-deep ${
+                      isActive ? "text-teal" : "text-ink"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
@@ -75,17 +83,22 @@ export default function Navbar() {
           className="border-t border-line bg-white lg:hidden"
         >
           <ul className="container-site flex flex-col py-4">
-            {nav.map((item) => (
-              <li key={item.label}>
-                <a
-                  href={item.href}
-                  className="block py-3 text-base font-medium uppercase tracking-wide text-ink transition-colors hover:text-teal-deep"
-                  onClick={() => setOpen(false)}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
+            {nav.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    className={`block py-3 text-base font-medium uppercase tracking-wide transition-colors hover:text-teal-deep ${
+                      isActive ? "text-teal" : "text-ink"
+                    }`}
+                    onClick={() => setOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
       )}
